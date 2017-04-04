@@ -22,7 +22,7 @@ SCENARIO("copy constructor")
 	vector_t vector2(vector1);
 	REQUIRE(vector1.size() == vector2.size());
 	REQUIRE(vector1.capacity() == vector2.capacity());
-	REQUIRE(vector1[] == vector2[]);
+	REQUIRE(vector1[0] == vector2[0]);
 }
 
 SCENARIO("=") 
@@ -31,7 +31,7 @@ SCENARIO("=")
 	vector_t vector2 = vector1;
 	REQUIRE(vector1.size() == vector2.size());
 	REQUIRE(vector1.capacity() == vector2.capacity());
-	REQUIRE(vector1[] == vector2[]);
+	REQUIRE(vector1[0] == vector2[0]);
 }
 
 SCENARIO("push")
