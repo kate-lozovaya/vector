@@ -8,4 +8,4 @@ BinaryTree methods:
 - [ ] copy constructor
 - [ ] =
 - [ ] push
-- [ ] []
+- [ ] [ ]
