@@ -64,6 +64,11 @@ SCENARIO("del")
 	REQUIRE(vector[0] == 0);
 	REQUIRE(vector[1] == 1);
 	REQUIRE(vector[2] == 3);
+	vector.del(1);
+	REQUIRE(vector.size() == 2);
+	REQUIRE(vector.capacity() == 2);
+	REQUIRE(vector[0] == 0);
+	REQUIRE(vector[1] == 3);
 }
 
 /*SCENARIO("[]")
