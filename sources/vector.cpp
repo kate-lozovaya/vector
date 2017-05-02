@@ -66,18 +66,15 @@ auto vector_t::push_back(int value) -> void
 	size_++;
 }
 
-void vector_t::del(int value)
+auto vector_t::del(int value) -> void
 {
-	int j = 0, a = 0;
+	int j = 0;
 	if (size_ != 0)
 	{
 		for (int i = 0; i <= size_; ++i)
 		{
 			if (ptr_[i] == value)
-			{
-				int a = value;
 				int j = i;
-			}
 		}
 		if (size_-- == capacity_ / 2)
 			capacity_ /= 2;
