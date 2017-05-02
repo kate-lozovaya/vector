@@ -53,7 +53,6 @@ SCENARIO("del")
 	vector.push_back(2);
 	vector.push_back(3);
 	vector.del(2);
-	REQUIRE(vector.size() == 3);
 	REQUIRE(vector.capacity() == 4);
 	REQUIRE(vector[0] == 0);
 	REQUIRE(vector[1] == 1);
