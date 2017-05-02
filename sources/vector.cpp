@@ -71,17 +71,17 @@ auto vector_t::del(int value) -> void
 	int j = 0;
 	if (size_ != 0)
 	{
-		for (int i = 0; i <= size_; ++i)
+		for (int i = 0; i < size_; ++i)
 		{
 			if (ptr_[i] == value)
-				int j = i;
+				j = i;
 		}
-		if (size_-- == capacity_ / 2)
+		if ((size_ - 1) == (capacity_ / 2))
 			capacity_ /= 2;
 		int* ptr = new int[capacity_];
 		for (int i = 0; i < j; ++i)
 			ptr[i] = ptr_[i];
-		for (int i = j; i <= size_; ++i)
+		for (int i = j; i < (size_ - 1); ++i)
 			ptr[i] = ptr_[j + 1];
 		delete[] ptr_;
 		ptr_ = ptr;
