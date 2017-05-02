@@ -15,5 +15,6 @@ public:
     auto size() const noexcept -> unsigned int;
     auto capacity() const noexcept -> unsigned int;
     auto push_back(int value) -> void;
+    auto vector_t::del(int value) -> void;
     auto operator[](unsigned int index) const noexcept -> int;
 };
