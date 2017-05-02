@@ -1,7 +1,7 @@
 #include <vector.hpp>
 #include <catch.hpp>
 
-/*SCENARIO("default constructor") 
+SCENARIO("default constructor") 
 {
 	vector_t vector;
 	REQUIRE(vector.size() == 0);
@@ -44,7 +44,7 @@ SCENARIO("push")
 	REQUIRE(vector[0] == 0);
 	REQUIRE(vector[1] == 2);
 	REQUIRE(vector[2] == 3);
-}*/
+}
 
 SCENARIO("del")
 {
@@ -58,26 +58,24 @@ SCENARIO("del")
 	REQUIRE(vector[1] == 1);
 	REQUIRE(vector[2] == 2);
 	REQUIRE(vector[3] == 3);
-	vector.del(2);
+	vector.del(3);
 	REQUIRE(vector.size() == 3);
 	REQUIRE(vector.capacity() == 4);
 	REQUIRE(vector[0] == 0);
 	REQUIRE(vector[1] == 1);
-	REQUIRE(vector[2] == 3);
+	REQUIRE(vector[2] == 2);
 	vector.del(1);
 	REQUIRE(vector.size() == 2);
 	REQUIRE(vector.capacity() == 2);
 	REQUIRE(vector[0] == 0);
-	REQUIRE(vector[1] == 3);
+	REQUIRE(vector[1] == 2);
 }
 
-/*SCENARIO("[]")
+SCENARIO("[]")
 {
 	vector_t vector(2);
 	REQUIRE(vector.size() == 2);
 	REQUIRE(vector.capacity() == 2);
 	REQUIRE(vector[0] == 0);
 	REQUIRE(vector[1] == 0);
-}*/
-
-
+}
