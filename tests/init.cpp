@@ -74,8 +74,10 @@ SCENARIO("del")
 SCENARIO("[]")
 {
 	vector_t vector(2);
+	int a = vector[1];
 	REQUIRE(vector.size() == 2);
 	REQUIRE(vector.capacity() == 2);
 	REQUIRE(vector[0] == 0);
 	REQUIRE(vector[1] == 0);
+	REQUIRE(a == 0);
 }
