@@ -54,7 +54,10 @@ auto vector_t::capacity() const noexcept -> unsigned int
 auto vector_t::push_back(int value) -> void
 {
 	if (capacity_ == 0)
+	{
 		capacity_ = 1;
+		ptr_ = new int[capacity_];
+	}
 	if (size_ == capacity_)
 	{
 		capacity_ *= 2;
