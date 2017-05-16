@@ -56,12 +56,14 @@ auto vector_t::push_back(int value) -> void
 	if (capacity_ == 0)
 		capacity_ = 1;
 	if (size_ == capacity_)
+	{
 		capacity_ *= 2;
-	int* ptr = new int[capacity_];
-	for (int i = 0; i < (size_ + 1); ++i)
-		ptr[i] = ptr_[i];
-	delete[] ptr_;
-	ptr_ = ptr;
+		int* ptr = new int[capacity_];
+		for (int i = 0; i < (size_ + 1); ++i)
+			ptr[i] = ptr_[i];
+		delete[] ptr_;
+		ptr_ = ptr;
+	}
 	ptr_[size_] = value;
 	size_++;
 }
@@ -71,12 +73,15 @@ auto vector_t::del() -> void
 	if (size_ != 0)
 	{
 		if (size_ - 1 == capacity_ /2)
+		{
 			capacity_ /= 2;
-		int* ptr = new int[capacity_];
-		for (int i = 0; i < size_ - 1; ++i)
-			ptr[i] = ptr_[i];
-		delete[] ptr_;
-		ptr_ = ptr;
+			int* ptr = new int[capacity_];
+			for (int i = 0; i < size_ - 1; ++i)
+				ptr[i] = ptr_[i];
+			delete[] ptr_;
+			ptr_ = ptr;
+		}
+		else ptr_[size_] = NULL;
 		size_--;
 	}
 	else return;
